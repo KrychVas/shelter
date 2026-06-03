@@ -1,0 +1,131 @@
+/* ==========================================================================
+   3. СТИЛІ ДЛЯ HEADER (ШАПКА)
+   ========================================================================== */
+.header {
+  padding-top: 60px; /* Відступ зліва/зверху з макета */
+  width: 100%;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logo__title {
+  font-family: var(--font-title);
+  font-size: 32px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+}
+
+.logo__subtitle {
+  font-family: var(--font-main);
+  font-size: 13px;
+  line-height: 115%;
+  letter-spacing: 0.1em;
+  color: var(--color-light-xl);
+}
+
+.nav__list {
+  display: flex;
+  gap: 35px;
+}
+
+.nav__link {
+  font-family: var(--font-main);
+  font-size: 15px;
+  line-height: 160%;
+  color: var(--color-dark-s);
+  transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+  color: var(--color-light-xl);
+  cursor: pointer;
+}
+
+.nav__link--active {
+  color: var(--color-light-xl);
+  border-bottom: 3px solid var(--color-primary);
+  padding-bottom: 5px;
+  cursor: default;
+}
+
+/* ==========================================================================
+   4. СТИЛІ ДЛЯ СЕКЦІЇ HERO
+   ========================================================================== */
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 900px; /* Висота першого екрана з Figma */
+  justify-content: space-between;
+}
+
+.hero__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 60px; /* Баланс між хедером і контентом */
+}
+
+.hero__content {
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero__title {
+  font-family: var(--font-title);
+  font-size: 44px;
+  line-height: 130%;
+  font-weight: 400;
+  color: var(--color-light-xl);
+  margin-bottom: 42px;
+}
+
+.hero__text {
+  font-family: var(--font-main);
+  font-size: 15px;
+  line-height: 160%;
+  color: var(--color-dark-s);
+  margin-bottom: 42px;
+}
+
+.hero__img-wrapper {
+  align-self: flex-end; /* Песик стоїть на нижній межі лінії блоку */
+}
+
+/* ==========================================================================
+   5. КОМПОНЕНТ: КНОПКА (ПОВТОРЮВАНИЙ СТИЛЬ)
+   ========================================================================== */
+.button {
+  font-family: var(--font-title);
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  padding: 15px 45px;
+  border-radius: 100px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.button--primary {
+  background-color: var(--color-primary);
+  color: var(--color-dark-3xl);
+}
+
+/* Інтерактивність без зсуву макета (Layout Jump) */
+.button--primary:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+}
