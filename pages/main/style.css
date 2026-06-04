@@ -1,8 +1,80 @@
 /* ==========================================================================
+   1. КОНСТАНТИ FIGMA (КОЛЬОРИ ТА ШРИФТИ)
+   ========================================================================== */
+:root {
+  /* Твої точні кольори з макета */
+  --color-light-xl: #ffffff;
+  --color-light-l: #f6f6f6;
+  --color-light-s: #fafafa;
+  --color-dark-s: #cdcdcd;
+  --color-dark-m: #b2b2b2;
+  --color-dark-l: #545454;
+  --color-dark-xl: #4c4c4c;
+  --color-dark-2xl: #444444;
+  --color-dark-3xl: #292929;
+  
+  /* Фірмові кольори (Primary) */
+  --color-primary: #f1cdb3;
+  --color-primary-light: #fddcc4;
+  
+  /* Фони */
+  --start-screen-background: #211f20;
+  --footer-background: #211f20;
+
+  /* Шрифти */
+  --font-title: "Georgia", serif;
+  --font-main: "Arial", sans-serif;
+}
+
+/* ==========================================================================
+   2. ГЛОБАЛЬНЕ СКИДАННЯ СТИЛІВ (RESET)
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* Плавний скролл до якорів за ТЗ */
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 15px;
+  line-height: 160%;
+  color: var(--color-dark-3xl);
+  background-color: var(--color-light-xl);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Головний контейнер 1280px за вимогами ТЗ */
+.container {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ==========================================================================
    3. СТИЛІ ДЛЯ HEADER (ШАПКА)
    ========================================================================== */
 .header {
-  padding-top: 60px; /* Відступ зліва/зверху з макета */
+  padding-top: 60px; /* Точний відступ з Figma */
   width: 100%;
 }
 
@@ -65,7 +137,7 @@
 .start-screen {
   display: flex;
   flex-direction: column;
-  min-height: 900px; /* Висота першого екрана з Figma */
+  min-height: 900px; /* Висота першого екрана з макета */
   justify-content: space-between;
 }
 
@@ -73,7 +145,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 60px; /* Баланс між хедером і контентом */
+  padding-top: 60px;
 }
 
 .hero__content {
@@ -101,11 +173,11 @@
 }
 
 .hero__img-wrapper {
-  align-self: flex-end; /* Песик стоїть на нижній межі лінії блоку */
+  align-self: flex-end; /* Песик чітко стоїть на нижній лінії */
 }
 
 /* ==========================================================================
-   5. КОМПОНЕНТ: КНОПКА (ПОВТОРЮВАНИЙ СТИЛЬ)
+   5. КОМПОНЕНТ: КНОПКА
    ========================================================================== */
 .button {
   font-family: var(--font-title);
@@ -124,7 +196,6 @@
   color: var(--color-dark-3xl);
 }
 
-/* Інтерактивність без зсуву макета (Layout Jump) */
 .button--primary:hover {
   background-color: var(--color-primary-light);
   border-color: var(--color-primary-light);
