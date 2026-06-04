@@ -58,7 +58,8 @@ img {
 }
 
 .container {
-  width: 1280px;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -73,36 +74,52 @@ img {
    3. HEADER
    ========================================================================== */
 .header {
-  padding-top: 60px;
+  position: absolute;
+  top: 30px;
+  left: 0;
   width: 100%;
+  z-index: 10;
 }
 
 .header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 60px;
 }
 
 .logo {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: space-between;
+  width: 250px;
+  height: 60px;
+  text-decoration: none;
 }
 
 .logo__title {
   font-family: var(--font-title);
+  font-weight: 400;
   font-size: 32px;
   line-height: 110%;
   letter-spacing: 0.06em;
   color: var(--color-primary);
+  margin: 0;
 }
 
 .logo__subtitle {
   font-family: var(--font-main);
+  font-weight: 400;
   font-size: 13px;
-  line-height: 115%;
+  line-height: 130%;
   letter-spacing: 0.1em;
   color: var(--color-light-xl);
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
 }
 
 .nav__list {
@@ -131,16 +148,29 @@ img {
 }
 
 /* ==========================================================================
-   4. HERO
+   4. START SCREEN WRAPPER & HERO
    ========================================================================== */
+.start-screen-wrapper {
+  background: linear-gradient(135deg, #513D2F 0%, #1A1A1C 100%), #211F20;
+  width: 100%;
+  min-height: 900px; 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
 .hero {
-  padding-top: 60px;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end; 
+  padding-top: 140px;    
 }
 
 .hero__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .hero__content {
@@ -148,20 +178,22 @@ img {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-bottom: 80px;
+  padding-bottom: 80px; 
 }
 
 .hero__title {
-  font-family: var(--font-title);
+  font-family: var(--font-title); 
+  font-weight: 400;
   font-size: 44px;
   line-height: 130%;
-  font-weight: 400;
   color: var(--color-light-xl);
+  max-width: 400px;  
   margin-bottom: 42px;
 }
 
 .hero__text {
   font-family: var(--font-main);
+  font-weight: 400;
   font-size: 15px;
   line-height: 160%;
   color: var(--color-dark-s);
@@ -170,31 +202,44 @@ img {
 
 .hero__img-wrapper {
   align-self: flex-end;
+  width: 698px;
+  height: 728px;
+  display: block;
+  margin-bottom: 0px;
+}
+
+.hero__img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* ==========================================================================
    5. BUTTONS
    ========================================================================== */
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 207px;
+  height: 52px;
+  border-radius: 100px;
   font-family: var(--font-title);
   font-size: 17px;
   line-height: 130%;
   letter-spacing: 0.06em;
-  padding: 15px 45px;
-  border-radius: 100px;
   border: 2px solid transparent;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .button--primary {
-  background-color: var(--color-primary);
+  background: var(--color-primary);
   color: var(--color-dark-3xl);
 }
 
 .button--primary:hover {
-  background-color: var(--color-primary-light);
+  background: var(--color-primary-light);
   border-color: var(--color-primary-light);
 }
 
