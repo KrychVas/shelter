@@ -197,3 +197,50 @@ img {
   background-color: var(--color-primary-light);
   border-color: var(--color-primary-light);
 }
+
+/* ==========================================================================
+   6. СЕКЦІЯ ABOUT (ПРО ПРИТУЛОК)
+   ========================================================================== */
+.about {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  background-color: var(--color-light-xl);
+}
+
+.about__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px; /* Точний проміжком між картинкою та текстом з макета */
+}
+
+.about__img-wrapper {
+  flex-shrink: 0;
+}
+
+.about__content {
+  max-width: 430px; /* Обмежуємо ширину тексту як у Figma */
+}
+
+.about__title {
+  font-family: var(--font-title);
+  font-size: 35px;
+  line-height: 130%;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-3xl);
+  margin-bottom: 25px;
+}
+
+.about__text {
+  font-family: var(--font-main);
+  font-size: 15px;
+  line-height: 160%;
+  color: var(--color-dark-xl);
+  margin-bottom: 25px;
+}
+
+/* Прибираємо нижній маргін для останнього абзацу, щоб не ламати відступи */
+.about__text:last-child {
+  margin-bottom: 0;
+}
