@@ -507,3 +507,109 @@ img {
   color: var(--color-dark-3xl);
   white-space: nowrap;
 }
+
+/* ==========================================================================
+   SECTION: DONATION (FIXED)
+   ========================================================================== */
+
+.donation {
+  background-color: var(--color-light-l); 
+  padding: 80px 0 100px;
+}
+
+.donation__container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1026px;
+  width: 100%;
+  margin: 0 auto;
+  column-gap: 30px; 
+}
+
+.donation__img {
+  display: block;
+  width: 505px;
+  height: 261px;
+  object-fit: contain;
+  margin-top: 10px;
+}
+
+.donation__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 505px;
+  margin-top: 0;
+}
+
+.donation__title {
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.donation__subtitle {
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+
+.donation__card {
+  display: inline-flex; 
+  align-items: center;
+  width: 349px;
+  height: 43px;
+  background-color: var(--color-primary);
+  border-radius: 9px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  text-decoration: none;
+  column-gap: 15px;
+  margin-bottom: 20px;
+  white-space: nowrap; 
+  transition: background-color 0.3s ease;
+}
+
+.donation__card:hover {
+  background-color: var(--color-primary-light);
+}
+
+.donation__card-icon {
+  display: block;
+  width: 30px;
+  height: 23px;
+  object-fit: contain;
+}
+
+.donation__card-number {
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+}
+
+/* Нижній текст */
+.donation__info {
+  font-family: var(--font-main);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: var(--color-dark-m);
+  margin: 0;
+  max-width: 380px;
+}
