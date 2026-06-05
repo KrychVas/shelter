@@ -279,6 +279,7 @@ img {
 
 .about__text {
   font-family: var(--font-main);
+  font-weight: 400;
   font-size: 15px;
   line-height: 160%;
   color: var(--color-dark-xl);
