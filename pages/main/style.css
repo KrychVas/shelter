@@ -151,34 +151,38 @@ img {
    4. START SCREEN WRAPPER & HERO
    ========================================================================== */
 .start-screen-wrapper {
-  background: linear-gradient(135deg, #513D2F 0%, #1A1A1C 100%), #211F20;
+  background: url('../../assets/image/noise_transparent.png') repeat, 
+              radial-gradient(100% 215.42% at 0% 0%, #513D2F 0%, var(--start-screen-background) 100%);
   width: 100%;
   min-height: 900px; 
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow: hidden; 
 }
 
 .hero {
   flex-grow: 1;
   display: flex;
   align-items: flex-end; 
-  padding-top: 140px;    
+  padding-top: 180px; 
 }
 
 .hero__container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end; 
   width: 100%;
 }
 
 .hero__content {
   max-width: 460px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-bottom: 80px; 
+  flex-shrink: 0;      
 }
 
 .hero__title {
@@ -188,6 +192,7 @@ img {
   line-height: 130%;
   color: var(--color-light-xl);
   max-width: 400px;  
+  margin-top: 0;
   margin-bottom: 42px;
 }
 
@@ -200,18 +205,24 @@ img {
   margin-bottom: 42px;
 }
 
+/* ПРАВИЛЬНИЙ АДАПТИВНИЙ ОБГОРТ ТА КАРТИНКА */
 .hero__img-wrapper {
   align-self: flex-end;
-  width: 698px;
-  height: 728px;
-  display: block;
+  max-width: 698px;   
+  width: 100%;        
+  height: 650px;      
+  display: flex;
+  align-items: flex-end;
   margin-bottom: 0px;
+  flex-shrink: 1;     
 }
 
 .hero__img {
   display: block;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  object-position: bottom right; 
 }
 
 /* ==========================================================================
@@ -439,6 +450,8 @@ img {
 .help {
   background-color: var(--color-light-xl);
   padding: 80px 0 100px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .help__container {
@@ -461,14 +474,15 @@ img {
 
 /* Список-сітка для іконок */
 .help__list {
-  display: grid;
-  grid-template-columns: repeat(5, 170px); 
-  justify-content: space-between;  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
   max-width: 1026px; 
   width: 100%;
   margin: 0 auto;
   padding: 0;
   list-style: none;
+  column-gap: 43px;
   row-gap: 55px; 
 }
 
@@ -479,12 +493,8 @@ img {
   align-items: center;
   text-align: center;
   justify-content: flex-start;
-  width: 100%;
-}
-
-
-.help__item:nth-child(n+6) {
-  transform: translateX(calc(50% + 14.5px)); 
+  width: 170px;
+  flex-shrink: 0;
 }
 
 
@@ -615,25 +625,30 @@ img {
 }
 
 /* ==========================================================================
-   10 SECTION: FOOTER
+   10 SECTION: FOOTER (FINAL PIXEL-PERFECT MASTER)
    ========================================================================== */
 
 .footer {
-  background: url('../image/noise_transparent@2x.png'), 
+  background: url('../../assets/image/noise_transparent@2x.png') repeat, 
               radial-gradient(100% 215.42% at 0% 0%, #513D2F 0%, var(--start-screen-background) 100%);
-  padding-top: 40px;
+  background-size: auto; 
+  padding-top: 40px; 
   padding-bottom: 0; 
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
   overflow: hidden;
 }
 
 .footer__container {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
-  max-width: 1200px; 
+  justify-content: space-between; /* Розштовхує блоки точно по краях */
+  max-width: 1200px; /* Чиста ширина контенту з Figma */
   width: 100%;
-  margin: 0 auto;
-  padding: 0 40px; 
+  margin: 0 auto; 
+  padding-left: 40px;  /* Бокові безпечні падінги сайту */
+  padding-right: 40px;
   box-sizing: border-box;
 }
 
@@ -641,16 +656,18 @@ img {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 16px; 
+  padding-top: 16px; /* Вирівнює заголовки по висоті вушок песика */
+  flex-shrink: 0; 
 }
 
-
 .footer__block--contacts {
-  max-width: 280px;
+  max-width: 279px; 
+  width: 100%;
 }
 
 .footer__block--locations {
-  max-width: 302px;
+  max-width: 302px; 
+  width: 100%;
 }
 
 .footer__title {
@@ -664,7 +681,6 @@ img {
   margin-bottom: 40px; 
 }
 
-/* Налаштування посилань-елементів */
 .footer__link {
   display: flex;
   align-items: center;
@@ -687,8 +703,8 @@ img {
   height: 32px;
   object-fit: contain;
   margin-right: 20px; 
+  flex-shrink: 0;
 }
-
 
 .footer__icon--marker {
   height: 40px; 
@@ -703,27 +719,49 @@ img {
   color: var(--color-primary); 
 }
 
-/* Для підпису (entrance from the store) */
 .footer__location-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
+}
+.footer__text {
+  font-family: var(--font-title); 
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: var(--color-primary); 
 }
 
 .footer__subtext {
   font-family: var(--font-title);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
   color: var(--color-primary);
-  margin-top: 5px;
+  margin-top: 4px;
+}
+/* ТОЧНИЙ ФІКС ДЛЯ МАЛЕНЬКОЇ КАРТИНКИ (МАРКЕРА) */
+.footer__icon--marker {
+  display: block;
+  width: 22px;          
+  height: 32px;         
+  object-fit: contain;  
+  margin-right: 20px;   
+  flex-shrink: 0;       
 }
 
-/* Картинка з собакою праворуч */
+/* КРИТИЧНИЙ ФІКС КАРТИНКИ */
 .footer__img {
   display: block;
-  width: 300px;
-  height: auto;
+  width: 300px;         
+  min-width: 300px;    
+  height: 310px;        
+  min-height: 310px;
+  object-fit: cover;    
   align-self: flex-end; 
+  margin-top: auto;    
+  flex-shrink: 0;       
 }
