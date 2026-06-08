@@ -1,0 +1,153 @@
+/* ==========================================================================
+   1. КОНСТАНТИ FIGMA
+   ========================================================================== */
+:root {
+  --color-light-xl: #ffffff;
+  --color-light-l: #f6f6f6;
+  --color-light-s: #fafafa;
+  --color-dark-s: #cdcdcd;
+  --color-dark-m: #b2b2b2;
+  --color-dark-l: #545454;
+  --color-dark-xl: #4c4c4c;
+  --color-dark-2xl: #444444;
+  --color-dark-3xl: #292929;
+  
+  --color-primary: #f1cdb3;
+  --color-primary-light: #fddcc4;
+  
+  --start-screen-background: #211f20;
+
+  --font-title: "Georgia", serif;
+  --font-main: "Arial", sans-serif;
+}
+
+/* ==========================================================================
+   2. RESET (СКИДАННЯ)
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 15px;
+  line-height: 160%;
+  color: var(--color-dark-3xl);
+  background-color: var(--color-light-xl);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.start-screen-wrapper {
+  background-color: var(--start-screen-background);
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   3. HEADER (ДЛЯ СТОРІНКИ OUR PETS — БІЛИЙ ФОН)
+   ========================================================================== */
+.header {
+  position: static;     
+  background-color: var(--color-light-xl); 
+  width: 100%;
+  padding: 30px 0;      
+  z-index: 10;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: 60px;
+  text-decoration: none;
+}
+
+.logo__title {
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-3xl); 
+  margin: 0;
+}
+
+.logo__subtitle {
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 130%;
+  letter-spacing: 0.1em;
+  color: var(--color-dark-xl); 
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  gap: 35px;
+}
+
+.nav__link {
+  font-family: var(--font-main);
+  font-size: 15px;
+  line-height: 160%;
+  color: var(--color-dark-l); 
+  transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+  color: var(--color-dark-3xl);
+  cursor: pointer;
+}
+
+.nav__link--active {
+  color: var(--color-dark-3xl); 
+  border-bottom: 3px solid var(--color-primary); 
+  padding-bottom: 5px;
+  cursor: default;
+}
