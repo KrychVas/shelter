@@ -286,3 +286,145 @@ img {
   color: var(--color-dark-s);
   cursor: not-allowed;
 }
+
+/* ==========================================================================
+   5 SECTION: FOOTER (FINAL PIXEL-PERFECT MASTER)
+   ========================================================================== */
+
+.footer {
+  background: url('../../assets/image/noise_transparent@2x.png') repeat, 
+              radial-gradient(100% 215.42% at 0% 0%, #513D2F 0%, var(--start-screen-background) 100%);
+  background-size: auto; 
+  padding-top: 40px; 
+  padding-bottom: 0; 
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.footer__container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between; /* Розштовхує блоки точно по краях */
+  max-width: 1200px; /* Чиста ширина контенту з Figma */
+  width: 100%;
+  margin: 0 auto; 
+  padding-left: 40px;  /* Бокові безпечні падінги сайту */
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+.footer__block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 16px; /* Вирівнює заголовки по висоті вушок песика */
+  flex-shrink: 0; 
+}
+
+.footer__block--contacts {
+  max-width: 279px; 
+  width: 100%;
+}
+
+.footer__block--locations {
+  max-width: 302px; 
+  width: 100%;
+}
+
+.footer__title {
+  font-family: var(--font-title); 
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: var(--color-light-xl); 
+  margin-top: 0;
+  margin-bottom: 40px; 
+}
+
+.footer__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 32px; 
+  transition: opacity 0.3s ease;
+}
+
+.footer__link:last-child {
+  margin-bottom: 0;
+}
+
+.footer__link:hover {
+  opacity: 0.8; 
+}
+
+.footer__icon {
+  display: block;
+  width: 40px;
+  height: 32px;
+  object-fit: contain;
+  margin-right: 20px; 
+  flex-shrink: 0;
+}
+
+.footer__icon--marker {
+  height: 40px; 
+}
+
+.footer__text {
+  font-family: var(--font-title); 
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: var(--color-primary); 
+}
+
+.footer__location-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.footer__text {
+  font-family: var(--font-title); 
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: var(--color-primary); 
+}
+
+.footer__subtext {
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+  margin-top: 4px;
+}
+/* ТОЧНИЙ ФІКС ДЛЯ МАЛЕНЬКОЇ КАРТИНКИ (МАРКЕРА) */
+.footer__icon--marker {
+  display: block;
+  width: 22px;          
+  height: 32px;         
+  object-fit: contain;  
+  margin-right: 20px;   
+  flex-shrink: 0;       
+}
+
+/* КРИТИЧНИЙ ФІКС КАРТИНКИ */
+.footer__img {
+  display: block;
+  width: 300px;         
+  min-width: 300px;    
+  height: 310px;        
+  min-height: 310px;
+  object-fit: cover;    
+  align-self: flex-end; 
+  margin-top: auto;    
+  flex-shrink: 0;       
+}
