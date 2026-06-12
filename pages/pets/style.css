@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. КОНСТАНТИ FIGMA
+   1. CONSTANTS
    ========================================================================== */
 :root {
   --color-light-xl: #ffffff;
@@ -22,7 +22,7 @@
 }
 
 /* ==========================================================================
-   2. RESET (СКИДАННЯ)
+   2. RESET 
    ========================================================================== */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -71,7 +71,7 @@ img {
 }
 
 /* ==========================================================================
-   3. HEADER (ДЛЯ СТОРІНКИ OUR PETS — БІЛИЙ ФОН)
+   3. HEADER 
    ========================================================================== */
 .header {
   position: static;     
@@ -153,10 +153,10 @@ img {
 }
 
 /* ==========================================================================
-   4. СЕКЦІЯ PETS PAGE (СІТКА ТА ПАГІНАЦІЯ)
+   4. SECTION PETS PAGE 
    ========================================================================== */
 .pets-page {
-  background-color: var(--color-light-l); /* Ніжно-сірий фон #F6F6F6 */
+  background-color: var(--color-light-l); 
   padding: 80px 0 100px;
 }
 
@@ -177,15 +177,13 @@ img {
   margin-bottom: 60px;
 }
 
-/* Створюємо ідеальну Grid-сітку: 4 колонки, між ними по 40px відступу */
 .pets-page__grid {
   display: grid;
   grid-template-columns: repeat(4, 270px);
-  gap: 30px 40px; /* 30px між рядками, 40px між колонками за Figma */
+  gap: 30px 40px; 
   margin-bottom: 60px;
 }
 
-/* --- КОПІЯ СТИЛІВ КАРТКИ ДЛЯ БЕЗПЕКИ --- */
 .pet-card {
   display: flex;
   flex-direction: column;
@@ -245,10 +243,9 @@ img {
   border-color: var(--color-primary-light);
 }
 
-/* --- СТИЛІ ПАГІНАЦІЇ --- */
 .pagination {
   display: flex;
-  gap: 20px; /* Відступ між круглими кнопочками */
+  gap: 20px; 
 }
 
 .pagination__btn {
@@ -268,19 +265,17 @@ img {
   transition: all 0.3s ease;
 }
 
-/* Ховер для активних кнопок */
 .pagination__btn:not(.pagination__btn--disabled):not(.pagination__btn--active):hover {
   background-color: var(--color-primary-light);
   border-color: var(--color-primary-light);
 }
 
-/* Активна сторінка (зафарбована кнопка з цифрою 1) */
 .pagination__btn--active {
   background-color: var(--color-primary);
   cursor: default;
 }
 
-/* Заблоковані кнопки (сірі стрілочки << та < на першій сторінці) */
+
 .pagination__btn--disabled {
   border-color: var(--color-dark-s);
   color: var(--color-dark-s);
@@ -288,7 +283,7 @@ img {
 }
 
 /* ==========================================================================
-   5 SECTION: FOOTER (FINAL PIXEL-PERFECT MASTER)
+   5 SECTION: FOOTER 
    ========================================================================== */
 
 .footer {
@@ -306,11 +301,11 @@ img {
 .footer__container {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between; /* Розштовхує блоки точно по краях */
-  max-width: 1200px; /* Чиста ширина контенту з Figma */
+  justify-content: space-between; 
+  max-width: 1200px; 
   width: 100%;
   margin: 0 auto; 
-  padding-left: 40px;  /* Бокові безпечні падінги сайту */
+  padding-left: 40px;  
   padding-right: 40px;
   box-sizing: border-box;
 }
@@ -319,7 +314,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 16px; /* Вирівнює заголовки по висоті вушок песика */
+  padding-top: 16px; 
   flex-shrink: 0; 
 }
 
@@ -370,16 +365,12 @@ img {
 }
 
 .footer__icon--marker {
-  height: 40px; 
-}
-
-.footer__text {
-  font-family: var(--font-title); 
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 115%;
-  letter-spacing: 0.06em;
-  color: var(--color-primary); 
+  display: block;
+  width: 22px;          
+  height: 32px;         
+  object-fit: contain;  
+  margin-right: 20px;   
+  flex-shrink: 0;       
 }
 
 .footer__location-wrapper {
@@ -388,6 +379,7 @@ img {
   align-items: flex-start;
   justify-content: center;
 }
+
 .footer__text {
   font-family: var(--font-title); 
   font-weight: 400;
@@ -406,17 +398,7 @@ img {
   color: var(--color-primary);
   margin-top: 4px;
 }
-/* ТОЧНИЙ ФІКС ДЛЯ МАЛЕНЬКОЇ КАРТИНКИ (МАРКЕРА) */
-.footer__icon--marker {
-  display: block;
-  width: 22px;          
-  height: 32px;         
-  object-fit: contain;  
-  margin-right: 20px;   
-  flex-shrink: 0;       
-}
 
-/* КРИТИЧНИЙ ФІКС КАРТИНКИ */
 .footer__img {
   display: block;
   width: 300px;         
