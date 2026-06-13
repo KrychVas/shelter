@@ -18,16 +18,16 @@ A responsive and pixel-perfect web application for a pet shelter, developed as p
 ## 📋 Project Implementation Checklist (Stage 1: Core Layout)
 
 ### Main Page (70 / 70)
-* <input type="checkbox" checked> **Markup Check** (W3C Valid, favicon added, single H1, text logo)
-* <input type="checkbox" checked> **Layout matches Figma design** (Header, Hero, About, Friends, Help, Donation, Footer)
-* <input type="checkbox" checked> **CSS Requirements** (Grid/Flex for Help section, centered container >1280px, full-width backgrounds)
-* <input type="checkbox" checked> **Interactivity** (About link inactive, anchor scrolling works, card transitions, pointer cursors)
+- [x] **Markup Check** (W3C Valid, favicon added, single H1, text logo)
+- [x] **Layout matches Figma design** (Header, Hero, About, Friends, Help, Donation, Footer)
+- [x] **CSS Requirements** (Grid/Flex for Help section, centered container >1280px, full-width backgrounds)
+- [x] **Interactivity** (About link inactive, anchor scrolling works, card transitions, pointer cursors)
 
 ### Pets Page (40 / 40)
-* <input type="checkbox" checked> **Markup Check** (W3C Valid, branding elements consistency, text logo)
-* <input type="checkbox" checked> **Layout matches Figma design** (Header, Friends Grid, Footer)
-* <input type="checkbox" checked> **CSS Requirements** (Centered container >1280px, full-width backgrounds)
-* <input type="checkbox" checked> **Interactivity** (Our Pets link inactive, disabled pagination controls explicitly locked on Page 1)
+- [x] **Markup Check** (W3C Valid, branding elements consistency, text logo)
+- [x] **Layout matches Figma design** (Header, Friends Grid, Footer)
+- [x] **CSS Requirements** (Centered container >1280px, full-width backgrounds)
+- [x] **Interactivity** (Our Pets link inactive, disabled pagination controls explicitly locked on Page 1)
 
 ---
 
