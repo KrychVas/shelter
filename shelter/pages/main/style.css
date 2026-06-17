@@ -481,9 +481,8 @@ img {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 55px 120px; 
+  justify-content: center; 
+  gap: 55px 50px; 
 }
 
 .help__item {
@@ -492,7 +491,7 @@ img {
   align-items: center;
   text-align: center;
   justify-content: flex-start;
-  width: auto;
+  width: 170;
   flex-shrink: 0;
 }
 
