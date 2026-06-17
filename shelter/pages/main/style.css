@@ -474,16 +474,16 @@ img {
 }
 
 .help__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;  
-  max-width: 1026px; 
+  max-width: 1026px;
   width: 100%;
   margin: 0 auto;
   padding: 0;
   list-style: none;
-  column-gap: 43px;
-  row-gap: 55px; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 55px 120px; 
 }
 
 .help__item {
@@ -492,14 +492,14 @@ img {
   align-items: center;
   text-align: center;
   justify-content: flex-start;
-  width: 170px;
+  width: auto;
   flex-shrink: 0;
 }
 
 .help__icon {
   display: block;
   height: 60px; 
-  width: auto;
+  width: 60px;
   margin-bottom: 30px; 
   object-fit: contain;
 }
@@ -510,7 +510,6 @@ img {
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
-  color: var(--color-dark-l);
   color: var(--color-dark-3xl);
   white-space: nowrap;
 }
