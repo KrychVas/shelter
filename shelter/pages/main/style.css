@@ -58,10 +58,11 @@ img {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
   padding: 0 40px;
+  box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -69,31 +70,31 @@ img {
    ========================================================================== */
 .header {
   position: absolute;
-  top: 30px;
+  top: 0px;
   left: 0;
   width: 100%;
   z-index: 10;
 }
 
 .header__container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 40px; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 30px;
   box-sizing: border-box;
 }
 
 .logo {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 250px;
-  height: 60px;
+  align-items: center; 
+  gap: 10px; 
   text-decoration: none;
+  width: auto; 
+  height: auto;
 }
 
 .logo__title {
@@ -123,7 +124,7 @@ img {
 
 .nav__list {
   display: flex;
-  gap: 35px;
+  gap: 36px;
 }
 
 .nav__link {
@@ -132,6 +133,9 @@ img {
   line-height: 160%;
   color: var(--color-dark-s);
   transition: color 0.3s ease;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .nav__link:hover {
@@ -139,11 +143,13 @@ img {
   cursor: pointer;
 }
 
-.nav__link--active {
-  color: var(--color-light-xl);
+.nav__link--active,
+.nav__link--active:hover {
+  color: var(--color-light-xl) !important;
   border-bottom: 3px solid var(--color-primary);
   padding-bottom: 5px;
-  cursor: default;
+  cursor: default !important;
+  pointer-events: none; 
 }
 
 /* ==========================================================================
@@ -171,10 +177,10 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: flex-end; 
-  max-width: 1200px;
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 40px;
   box-sizing: border-box;
 }
 
@@ -468,16 +474,15 @@ img {
 }
 
 .help__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;  
-  max-width: 1026px; 
+  max-width: 1026px;
   width: 100%;
   margin: 0 auto;
   padding: 0;
   list-style: none;
-  column-gap: 43px;
-  row-gap: 55px; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 55px 40px; 
 }
 
 .help__item {
@@ -493,7 +498,7 @@ img {
 .help__icon {
   display: block;
   height: 60px; 
-  width: auto;
+  width: 60px;
   margin-bottom: 30px; 
   object-fit: contain;
 }
@@ -504,7 +509,6 @@ img {
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
-  color: var(--color-dark-l);
   color: var(--color-dark-3xl);
   white-space: nowrap;
 }
@@ -522,10 +526,10 @@ img {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  max-width: 1026px;
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  column-gap: 30px; 
+  column-gap: 36px; 
 }
 
 .donation__img {
@@ -622,7 +626,7 @@ img {
   background: url('../../assets/image/noise_transparent@2x.png') repeat, 
               radial-gradient(100% 215.42% at 0% 0%, #513D2F 0%, var(--start-screen-background) 100%);
   background-size: auto; 
-  padding-top: 40px; 
+  padding-top: 36px; 
   padding-bottom: 0; 
   padding-left: 0;
   padding-right: 0;
@@ -634,7 +638,7 @@ img {
   display: flex;
   align-items: flex-start;
   justify-content: space-between; 
-  max-width: 1200px; 
+  max-width: 1280px; 
   width: 100%;
   margin: 0 auto; 
   padding-left: 40px;  
@@ -653,11 +657,13 @@ img {
 .footer__block--contacts {
   max-width: 279px; 
   width: 100%;
+  gap: 40px;
 }
 
 .footer__block--locations {
   max-width: 302px; 
   width: 100%;
+  gap: 32px;
 }
 
 .footer__title {
@@ -668,19 +674,19 @@ img {
   letter-spacing: 0.06em;
   color: var(--color-light-xl); 
   margin-top: 0;
-  margin-bottom: 40px; 
+  margin-bottom: 4px; 
+}
+
+.footer__block--locations .footer__title {
+  margin-bottom: 0px;
 }
 
 .footer__link {
   display: flex;
   align-items: center;
-  text-decoration: none;
-  margin-bottom: 32px; 
+  text-decoration: none; 
   transition: opacity 0.3s ease;
-}
-
-.footer__link:last-child {
-  margin-bottom: 0;
+  gap: 20px;
 }
 
 .footer__link:hover {
@@ -692,7 +698,6 @@ img {
   width: 40px;
   height: 32px;
   object-fit: contain;
-  margin-right: 20px; 
   flex-shrink: 0;
 }
 
@@ -700,8 +705,7 @@ img {
   display: block;
   width: 22px;          
   height: 32px;         
-  object-fit: contain;  
-  margin-right: 20px;   
+  object-fit: contain;     
   flex-shrink: 0;       
 }
 
