@@ -42,6 +42,11 @@ body {
   background-color: var(--color-light-xl);
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 ul, ol {
   list-style: none;
 }
@@ -409,4 +414,203 @@ img {
   align-self: flex-end; 
   margin-top: auto;    
   flex-shrink: 0;       
+}
+
+/* ==========================================================================
+   6. MEDIA QUERIES (ADAPTIVE DESIGN)
+   ========================================================================== */
+
+@media (max-width: 1279px) {
+  .header__container {
+    padding: 0 30px;
+  }
+
+  .pets-page {
+    padding: 60px 0 76px;
+  }
+
+  .pets-page__title {
+    margin-bottom: 30px;
+  }
+
+  .pets-page__grid {
+    grid-template-columns: repeat(2, 270px) !important;
+    justify-content: center;
+    gap: 30px 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer {
+    padding-top: 30px;
+  }
+
+  .footer__container {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 0 30px;
+  }
+
+  .footer__block {
+    padding-top: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .footer__link {
+    justify-content: center;
+  }
+
+  .footer__img {
+    align-self: center;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 20px 0;
+  }
+
+  .header__container {
+    padding: 0 20px;
+    position: relative;
+  }
+
+  .nav, 
+  .header__nav, 
+  .header .nav, 
+  .header .header__nav {
+    display: none !important;
+  }
+
+  .burger {
+    display: block !important;
+    cursor: pointer;
+    z-index: 15;
+  }
+
+  .burger__line {
+    background-color: var(--color-dark-3xl) !important; 
+    width: 30px;
+    height: 2px;
+    margin: 6px 0;
+    display: block;
+  }
+
+  .pets-page {
+    padding: 42px 0 42px;
+  }
+
+  .pets-page__title {
+    font-size: 25px;
+    line-height: 130%;
+    margin-bottom: 42px;
+  }
+
+  .pets-page__grid {
+    grid-template-columns: 270px !important;
+    justify-content: center;
+    gap: 30px 0;
+    margin-bottom: 42px;
+  }
+
+  .pagination {
+    gap: 10px;
+  }
+
+  .footer {
+    padding-top: 30px;
+  }
+
+  .footer__container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 40px !important;
+    padding: 0 10px !important;
+  }
+
+  .footer__block {
+    display: flex !important;
+    flex-direction: column !important;
+    padding-top: 0 !important;
+    align-items: center !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .footer__block--contacts,
+  .footer__block--locations {
+    max-width: 300px !important;
+    width: 100% !important;
+  }
+
+  .footer__title {
+    font-size: 25px !important;
+    line-height: 130% !important;
+    text-align: center !important;
+    margin-bottom: 40px !important;
+    max-width: 280px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .footer__link {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    max-width: 300px !important;
+    width: 100% !important;
+    gap: 20px !important;
+    margin-bottom: 32px !important;
+    min-height: auto !important;
+  }
+
+  .footer__link:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .footer__icon {
+    width: 40px !important;
+    height: 32px !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+  }
+
+  .footer__icon--marker {
+    width: 22px !important;
+    height: 32px !important;
+    flex-shrink: 0 !important;
+    margin: 0 9px 0 9px !important;
+  }
+
+  .footer__text {
+    display: block !important;
+    text-align: left !important;
+    font-size: 20px !important;
+    line-height: 115% !important;
+    flex-grow: 1 !important;
+    white-space: normal !important;
+  }
+
+  .footer__img {
+    display: block !important;
+    max-width: 260px !important;
+    height: 269px !important;
+    width: 100% !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    align-self: center !important;
+    margin: 0 auto -1px auto !important;
+    object-fit: contain !important;
+  }
 }
