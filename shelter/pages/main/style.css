@@ -892,12 +892,31 @@ img {
     padding: 0 10px;
   }
 
+  /* Початковий стан навігації: ховаємо за правий край екрана */
   .nav {
-    display: none; 
+    display: flex !important; 
+    position: fixed;
+    top: 0;
+    right: -100%; 
+    width: 320px;
+    height: 100vh;
+    background-color: #ffffff; /* Біле тло для Pets. Для Main можна змінити на #292929 */
+    z-index: 11;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 30px;
+    gap: 40px;
+    transition: right 0.3s ease; 
+  }
+
+  /* Клас додається через JS — меню плавно виїжджає */
+  .nav.open {
+    right: 0 !important;
   }
 
   .burger {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -911,8 +930,19 @@ img {
     display: block;
     height: 2px;
     width: 100%;
-    background-color: var(--color-primary);
-    transition: transform 0.3s ease;
+    background-color: #292929 !important; /* Темний колір для хорошої видимості на білій шапці */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Анімація перетворення на хрестик */
+  .burger.active .burger__line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  .burger.active .burger__line:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.active .burger__line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
   }
 
   /* === HERO MOBILE === */
@@ -954,7 +984,6 @@ img {
     margin-bottom: 26px;
   }
 
- 
   .hero__img-wrapper {
     max-width: 260px;
     height: 272px;   
@@ -1072,7 +1101,7 @@ img {
     height: auto;
   }
 
-/* === FOOTER MOBILE === */
+  /* === FOOTER MOBILE === */
   .footer {
     padding-top: 30px;
   }
@@ -1100,7 +1129,7 @@ img {
 
   .footer__link {
     display: flex !important;
-    flex-direction: row !important; /* Строго іконка зліва, текст справа */
+    flex-direction: row !important; 
     align-items: center !important;
     justify-content: flex-start !important;
     text-align: left !important;
@@ -1115,7 +1144,7 @@ img {
   }
 
   .footer__icon, .footer__icon--marker {
-    flex-shrink: 0 !important; /* Забороняємо іконкам ламатися і стискатися */
+    flex-shrink: 0 !important; 
     margin: 0 !important;
   }
 
@@ -1137,5 +1166,168 @@ img {
     align-self: center;
     margin: 0 auto -1px auto !important;
   }
-
 } 
+
+/* ==========================================================================
+   GLOBAL UTILITIES FOR JS FUNCTIONALITIES (OVERLAY & LOCK)
+   ========================================================================== */
+
+/* Блокування скролу сторінки */
+body.lock {
+  overflow: hidden;
+}
+
+/* Стилі для темного тла (overlay) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(41, 41, 41, 0.6);
+  z-index: 10; 
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ==========================================================================
+   SLIDER ANIMATIONS (CSS @keyframes & Transitions)
+   ========================================================================== */
+
+/* Контейнер каруселі має підтримувати флекс та відносне позиціонування */
+.pets__carousel {
+  display: flex;
+  position: relative;
+  transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Класи-тригери, які JS додає під час кліку на стрілочки */
+.pets__carousel.transition-left {
+  animation: move-left 0.5s ease-in-out forwards;
+}
+
+.pets__carousel.transition-right {
+  animation: move-right 0.5s ease-in-out forwards;
+}
+
+/* Ключові кадри для зсуву слайдера вліво та вправо */
+@keyframes move-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Зсув залежить від ширини карток та gap, адаптується за потребою */
+    transform: translateX(100%); 
+  }
+}
+
+@keyframes move-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Стан вимкнених кнопок пагінації (сторінка Pets) */
+.pagination__button.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  border-color: #cdcdcd !important;
+  color: #cdcdcd !important;
+  cursor: default;
+}
+
+/* ==========================================================================
+   MODAL WINDOW (POPUP) STYLES
+   ========================================================================== */
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30; /* Вище за overlay (10) та nav (11) */
+  
+  /* Початковий прихований стан */
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Клас, який додається через JS для відкриття */
+.popup.popup--open {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}
+
+/* Внутрішня обгортка картки попапу */
+.popup__wrapper {
+  position: relative;
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 9px;
+  max-width: 900px;
+  width: calc(100% - 40px);
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  
+  /* Анімація збільшення вікна при появі */
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.popup.popup--open .popup__wrapper {
+  transform: scale(1);
+}
+
+/* Кнопка закриття (хрестик) */
+.popup__close {
+  position: absolute;
+  top: -52px;
+  right: -40px;
+  width: 52px;
+  height: 52px;
+  background: transparent;
+  border: 2px solid var(--color-primary, #f1cdb3);
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.popup__close:hover {
+  background-color: var(--color-primary-light, #fddcc4);
+}
+
+/* Медіа-запити для адаптивності попапу під тач-пристрої */
+@media (max-width: 950px) {
+  .popup__close {
+    right: 0; /* Зсуваємо хрестик всередину екрана на планшетах/мобільних */
+  }
+}
+
+@media (max-width: 767px) {
+  .popup__wrapper {
+    flex-direction: column; /* На мобільних картинка стає зверху тексту */
+    max-width: 240px;
+  }
+  .popup__image {
+    display: none; /* За ТЗ на 320px картинку часто приховують для економії місця */
+  }
+}
