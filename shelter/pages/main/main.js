@@ -1,102 +1,103 @@
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
 
-  // Повна база даних прямо в JS для роботи попапів без fetch
+  // Твій новий оригінальний JSON-масив
   const petsData = [
     {
       "name": "Jennifer",
-      "img": "pets-jennifer.png",
+      "img": "../../assets/images/jennifer.png",
       "type": "Dog",
       "breed": "Labrador",
-      "description": "Jennifer is a sweet 2 months old Labrador that is looking for a loving home to live in. She would love to play fetch with you all day long.",
+      "description": "Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.",
       "age": "2 months",
       "inoculations": ["none"],
       "diseases": ["none"],
       "parasites": ["none"]
     },
     {
+      "name": "Sophia",
+      "img": "../../assets/images/sophia.png",
+      "type": "Dog",
+      "breed": "Shih tzu",
+      "description": "Sophia here and I'm looking for my forever home to live out the best years of my life. I am full of energy. Everyday I'm learning new things, like how to walk on a leash, go potty outside, bark and play with toys and I still need some practice.",
+      "age": "1 month",
+      "inoculations": ["parvovirus"],
+      "diseases": ["none"],
+      "parasites": ["none"]
+    },
+    {
+      "name": "Woody",
+      "img": "../../assets/images/woody.png",
+      "type": "Dog",
+      "breed": "Golden Retriever",
+      "description": "Woody is a handsome 3 1/2 year old boy. Woody does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Woody will be happier when he finds a new family that can spend a lot of time with him.",
+      "age": "3 years 6 months",
+      "inoculations": ["adenovirus", "distemper"],
+      "diseases": ["right back leg mobility reduced"],
+      "parasites": ["none"]
+    },
+    {
+      "name": "Scarlett",
+      "img": "../../assets/images/scarlett.png",
+      "type": "Dog",
+      "breed": "Jack Russell Terrier",
+      "description": "Scarlett is a happy, playful girl who will make you laugh and smile. She forms a bond quickly and will make a loyal companion and a wonderful family dog or a good companion for a single individual too since she likes to hang out and be with her human.",
+      "age": "3 months",
+      "inoculations": ["parainfluenza"],
+      "diseases": ["none"],
+      "parasites": ["none"]
+    },
+    {
       "name": "Katrine",
-      "img": "pets-katrine.png",
+      "img": "../../assets/images/katrine.png",
       "type": "Cat",
       "breed": "British Shorthair",
-      "description": "Katrine is a beautiful girl. She is gentle and affectionate, likes to purr and sit on your lap. She is very clean and well-behaved.",
+      "description": "Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.",
       "age": "6 months",
       "inoculations": ["panleukopenia"],
       "diseases": ["none"],
       "parasites": ["none"]
     },
     {
-      "name": "Woody",
-      "img": "pets-woody.png",
-      "type": "Dog",
-      "breed": "Golden Retriever",
-      "description": "Woody is a handsome 3 years old Golden Retriever. He is energetic, friendly and loves outdoor activities. He gets along great with children and other pets.",
-      "age": "3 years",
-      "inoculations": ["adenovirus", "distemper"],
-      "diseases": ["none"],
-      "parasites": ["none"]
-    },
-    {
-      "name": "Sophia",
-      "img": "pets-sophia.png",
-      "type": "Dog",
-      "breed": "Shih Tzu",
-      "description": "Sophia is a small, charming girl with a big personality. She loves being the center of attention and will follow you everywhere. Perfect for apartment living.",
-      "age": "1 month",
-      "inoculations": ["bravacto"],
-      "diseases": ["none"],
-      "parasites": ["none"]
-    },
-    {
       "name": "Timmy",
-      "img": "pets-timmy.png",
+      "img": "../../assets/images/timmy.png",
       "type": "Cat",
-      "breed": "Bengal",
-      "description": "Timmy is an active, playful Bengal kitten. He loves climbing high places and chasing toy mice. He needs an owner who can keep up with his high energy.",
+      "breed": "British Shorthair",
+      "description": "Timmy is an adorable grey british shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Timmy has a lot to say and wants a person to share his thoughts with.",
+      "age": "2 years 3 months",
+      "inoculations": ["calicivirus", "viral rhinotracheitis"],
+      "diseases": ["kidney stones"],
+      "parasites": ["none"]
+    },
+    {
+      "name": "Freddie",
+      "img": "../../assets/images/freddie.png",
+      "type": "Cat",
+      "breed": "British Shorthair",
+      "description": "Freddie is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Freddie has bounced around a lot in his life, and is looking to find his forever home.",
       "age": "2 months",
-      "inoculations": ["calicivirus"],
+      "inoculations": ["rabies"],
       "diseases": ["none"],
       "parasites": ["none"]
     },
     {
       "name": "Charly",
-      "img": "pets-charly.png",
+      "img": "../../assets/images/charly.png",
       "type": "Dog",
       "breed": "Jack Russell Terrier",
-      "description": "Charly is a spirited Jack Russell. He has boundless energy and a strong hunting instinct. He requires consistent training and lots of mental stimulation.",
-      "age": "8 months",
-      "inoculations": ["bordeaux"],
-      "diseases": ["none"],
-      "parasites": ["none"]
-    },
-    {
-      "name": "Scarlett",
-      "img": "pets-scarlet.png",
-      "type": "Dog",
-      "breed": "Jack Russell Terrier",
-      "description": "Scarlett is Charly's sister, but much calmer. She loves cuddles and quiet walks in the park. She is very loyal and responds well to gentle guidance.",
-      "age": "8 months",
-      "inoculations": ["none"],
-      "diseases": ["none"],
-      "parasites": ["none"]
-    },
-    {
-      "name": "Freddie",
-      "img": "pets-freddie.png",
-      "type": "Cat",
-      "breed": "British Shorthair",
-      "description": "Freddie is a laid-back British Shorthair. He spends most of his day napping in sunny spots. He is quiet, independent and independent-minded.",
-      "age": "2 years",
-      "inoculations": ["rabies"],
-      "diseases": ["none"],
-      "parasites": ["none"]
+      "description": "This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.",
+      "age": "8 years",
+      "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
+      "diseases": ["deafness", "blindness"],
+      "parasites": ["lice", "fleas"]
     }
   ];
 
-  const imgPrefix = '../../assets/image/';
+  // Динамічно вираховуємо шлях до зображень на основі вашого ТЗ
+  const imgPrefix = '../../assets/images/';
 
   /* ==========================================================================
-     БЕНГЕР МЕНЮ
+     БУРГЕР МЕНЮ
      ========================================================================== */
   const burgerButton = document.querySelector('.burger');
   const navMenu = document.querySelector('.nav');
@@ -137,10 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function openModal(pet) {
+    const imgName = pet.img.split('/').pop();
     popup.innerHTML = `
       <div class="popup__wrapper">
         <button class="button-round popup__close">✕</button>
-        <img class="popup__image" src="${imgPrefix + pet.img}" alt="${pet.name}" />
+        <img class="popup__image" src="${imgPrefix + imgName}" alt="${pet.name}" />
         <div class="popup__content">
           <h3 class="popup__title">${pet.name}</h3>
           <h4 class="popup__subtitle">${pet.type} - ${pet.breed}</h4>
@@ -198,13 +200,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderSlider(group) {
-    carousel.innerHTML = group.map(pet => `
-      <div class="pet-card">
-        <img class="pet-card__img" src="${imgPrefix + pet.img}" alt="${pet.name}" />
-        <h3 class="pet-card__name">${pet.name}</h3>
-        <button class="button-secondary">Learn more</button>
-      </div>
-    `).join('');
+    carousel.innerHTML = group.map(pet => {
+      const imgName = pet.img.split('/').pop();
+      return `
+        <div class="pet-card">
+          <img class="pet-card__img" src="${imgPrefix + imgName}" alt="${pet.name}" />
+          <h3 class="pet-card__name">${pet.name}</h3>
+          <button class="button-secondary">Learn more</button>
+        </div>`;
+    }).join('');
   }
 
   function move() {
