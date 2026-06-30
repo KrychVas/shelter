@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Jennifer",
+    "img": "assets/image/pets-jennifer.png",
+    "type": "Dog",
+    "breed": "Labrador",
+    "description": "Jennifer is a sweet 2 months old Labrador that is looking for a loving home to live in. She would love to play fetch with you all day long.",
+    "age": "2 months",
+    "inoculations": ["none"],
+    "diseases": ["none"],
+    "parasites": ["none"]
+  },
+  {
+    "name": "Katrine",
+    "img": "assets/image/pets-katrine.png",
+    "type": "Cat",
+    "breed": "British Shorthair",
+    "description": "Katrine is a beautiful girl. She is gentle and affectionate, likes to purr and sit on your lap. She is very clean and well-behaved.",
+    "age": "6 months",
+    "inoculations": ["panleukopenia"],
+    "diseases": ["none"],
+    "parasites": ["none"]
+  },
+  {
+    "name": "Woody",
+    "img": "assets/image/pets-woody.png",
+    "type": "Dog",
+    "breed": "Golden Retriever",
+    "description": "Woody is a handsome 3 years old Golden Retriever. He is energetic, friendly and loves outdoor activities. He gets along great with children and other pets.",
+    "age": "3 years",
+    "inoculations": ["adenovirus", "distemper"],
+    "diseases": ["none"],
+    "parasites": ["none"]
+  },
+  {
+    "name": "Sophia",
+    "img": "assets/image/pets-sophia.png",
+    "type": "Dog",
+    "breed": "Shih Tzu",
+    "description": "Sophia is a small, charming girl with a big personality. She loves being the center of attention and will follow you everywhere. Perfect for apartment living.",
+    "age": "1 month",
+    "inoculations": ["bravacto"],
+    "diseases": ["none"],
+    "parasites": ["none"]
+  },
+  {
+    "name": "Timmy",
+    "img": "assets/image/pets-timmy.png",
+    "type": "Cat",
+    "breed": "Bengal",
+    "description": "Timmy is an active, playful Bengal kitten. He loves climbing high places and chasing toy mice. He needs an owner who can keep up with his high energy.",
+    "age": "2 months",
+    "inoculations": ["calicivirus"],
+    "diseases": ["none"],
+    "parasites": ["none"]
+  },
+  {
+    "name": "Charly",
+    "img": "assets/image/pets-charly.png",
+    "type": "Dog",
+    "breed": "Jack Russell Terrier",
+    "description": "Charly is a spirited Jack Russell. He has boundless energy and a strong hunting instinct. He requires consistent training and lots of mental stimulation.",
+    "age": "8 months",
+    "inoculations": ["bordeaux"],
+    "diseases": ["none"],
+    "parasites": ["none"]
+  },
+  {
+    "name": "Scarlett",
+    "img": "assets/image/pets-scarlet.png",
+    "type": "Dog",
+    "breed": "Jack Russell Terrier",
+    "description": "Scarlett is Charly's sister, but much calmer. She loves cuddles and quiet walks in the park. She is very loyal and responds well to gentle guidance.",
+    "age": "8 months",
+    "inoculations": ["none"],
+    "diseases": ["none"],
+    "parasites": ["none"]
+  },
+  {
+    "name": "Freddie",
+    "img": "assets/image/pets-freddie.png",
+    "type": "Cat",
+    "breed": "British Shorthair",
+    "description": "Freddie is a laid-back British Shorthair. He spends most of his day napping in sunny spots. He is quiet, independent and independent-minded.",
+    "age": "2 years",
+    "inoculations": ["rabies"],
+    "diseases": ["none"],
+    "parasites": ["none"]
+  }
+]

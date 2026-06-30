@@ -1331,3 +1331,21 @@ body.lock {
     display: none; /* За ТЗ на 320px картинку часто приховують для економії місця */
   }
 }
+
+/* Потрібно для правильного позиціонування підміни елементів у каруселі */
+.pets__carousel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  min-height: 440px; /* Висота вашої картки */
+}
+
+/* Стан відключених кнопок пагінації */
+.button-arrow.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  border-color: var(--color-dark-s, #cdcdcd) !important;
+  color: var(--color-dark-s, #cdcdcd) !important;
+  cursor: not-allowed;
+}
